@@ -30,10 +30,13 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func segChange(_ sender: UISegmentedControl) {
+        if switch2.isOn {
         label.text = segname.titleForSegment(at: segname.selectedSegmentIndex) ?? ""
+        } else {
+            label.text = "off"
+        }
     }
 }
-
 
 
 
