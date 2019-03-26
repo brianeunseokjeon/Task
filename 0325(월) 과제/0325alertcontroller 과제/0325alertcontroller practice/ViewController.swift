@@ -39,14 +39,28 @@ class ViewController: UIViewController {
             title: "카운트 추가?", message: nil , preferredStyle: .alert
         )
         let okAction = UIAlertAction(title: "OK", style: .default) { _ in
-            self.count += 1
-            self.labelview.text = "\(self.count)"
+            if let k = alertController.textFields?[0].text {
+                if k.isEmpty {
+                    self.count += 1
+                } else {
+                    self.count += Int(k) ?? 0
+                }
+                self.labelview.text = "\(self.count)"
+            }
+            
+            
         }
         let reset = UIAlertAction(title: "reset", style: .default) { _ in
+         
             self.count = 0
             self.labelview.text = "\(self.count)"
         }
+        
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        
+        
+        alertController.addTextField()
+        
         alertController.addAction(okAction)
         alertController.addAction(cancelAction)
         alertController.addAction(reset)
