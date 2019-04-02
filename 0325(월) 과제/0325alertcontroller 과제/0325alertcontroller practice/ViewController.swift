@@ -48,7 +48,6 @@ class ViewController: UIViewController {
                 self.labelview.text = "\(self.count)"
             }
             
-            
         }
         let reset = UIAlertAction(title: "reset", style: .default) { _ in
          

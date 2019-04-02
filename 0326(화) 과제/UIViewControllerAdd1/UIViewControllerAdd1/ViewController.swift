@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     
     var count = 0
     let label = UILabel()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         makeView()
@@ -47,9 +47,7 @@ class ViewController: UIViewController {
         bViewController.count = count
         present(bViewController,animated: true)
     }
-    func changeText(){
-
-    }
+  
     override func viewWillAppear(_ animated: Bool) {
         label.text = "\(self.count)"
 
