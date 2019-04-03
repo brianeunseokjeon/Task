@@ -23,7 +23,40 @@ if let task = (task2 as? (Int,Int) -> Int ) {
 }
 
 
+// [심화 문제 2]. 위 values 변수의 각 값을 switch 문과 타입캐스팅을 이용해 출력하기
 
+
+
+
+enum valuesIndex {
+    case firstIndexInt , secondIndexDouble, thirdIndexTuple , fourthIndexClass, fifthIndexClosuer
+}
+valuesIndex.firstIndexInt
+valuesIndex.secondIndexDouble
+valuesIndex.thirdIndexTuple
+valuesIndex.fourthIndexClass
+valuesIndex.fifthIndexClosuer
+
+
+    class Car {}
+    let values: [Any] = [0, 0.0, (2.0, Double.pi), Car(), { (str: String) -> Int in str.count }]
+    for h in values {
+        switch h {
+        case  :
+            <#code#>
+        default:
+            <#code#>
+        }
+    }
+   
+
+var h = (2.0, Double.pi)
+type(of: values[4])
+let firstIndexInt = ( values[0] as? Int ) ?? 0
+let secondIndexDouble = ( values[1] as? Double ) ?? 4
+let thirdIndexTuple = ( values[2] as? (Double,Double) ) ?? (0.0,0.0)
+let fourthIndexClass = ( values[3] as? Car) ?? Car()
+let fifthIndexClosuer = ( values[4] as? ((String) -> Int) )!
 
 
 
