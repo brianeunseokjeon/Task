@@ -22,9 +22,18 @@ class FirstVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
     }
+    
+    @IBAction func allPlusOne(_ sender: Any) {
+       dogCount += 1
+        catCount += 1
+        birdCount += 1
+        
+        DogLabel.text = "\(dogCount)"
+        CatLabel.text = "\(catCount)"
+        BirdLabel.text = "\(birdCount)"
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         guard let id = segue.identifier else { return }
