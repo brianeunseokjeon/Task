@@ -28,35 +28,32 @@ if let task = (task2 as? (Int,Int) -> Int ) {
 
 
 
-enum valuesIndex {
-    case firstIndexInt , secondIndexDouble, thirdIndexTuple , fourthIndexClass, fifthIndexClosuer
-}
-valuesIndex.firstIndexInt
-valuesIndex.secondIndexDouble
-valuesIndex.thirdIndexTuple
-valuesIndex.fourthIndexClass
-valuesIndex.fifthIndexClosuer
-
-
     class Car {}
     let values: [Any] = [0, 0.0, (2.0, Double.pi), Car(), { (str: String) -> Int in str.count }]
-    for h in values {
-        switch h {
-        case  :
-            <#code#>
-        default:
-            <#code#>
-        }
+    for x in values {
+        switch x {
+        case let x as Int :
+            print (x)
+        case let x as Double :
+            print (x)
+        case let x as (Double,Double) :
+            print (x)
+        case let x as Car :
+            print (x)
+        case let x as (String)->Int :
+            print (x)
+        default :
+            print(1)
     }
-   
+}
 
-var h = (2.0, Double.pi)
-type(of: values[4])
-let firstIndexInt = ( values[0] as? Int ) ?? 0
-let secondIndexDouble = ( values[1] as? Double ) ?? 4
-let thirdIndexTuple = ( values[2] as? (Double,Double) ) ?? (0.0,0.0)
-let fourthIndexClass = ( values[3] as? Car) ?? Car()
-let fifthIndexClosuer = ( values[4] as? ((String) -> Int) )!
+//var h = (2.0, Double.pi)
+//type(of: values[4])
+//let firstIndexInt = ( values[0] as? Int ) ?? 0
+//let secondIndexDouble = ( values[1] as? Double ) ?? 4
+//let thirdIndexTuple = ( values[2] as? (Double,Double) ) ?? (0.0,0.0)
+//let fourthIndexClass = ( values[3] as? Car) ?? Car()
+//let fifthIndexClosuer = ( values[4] as? ((String) -> Int) )!
 
 
 
