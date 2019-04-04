@@ -83,15 +83,6 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WnY-bl-ZFl">
-                                <rect key="frame" x="176" y="338" width="62" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.82588434219360352" green="0.95076388120651245" blue="0.95303279161453247" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="count"/>
-                                <connections>
-                                    <action selector="allPlusOne:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4Vw-54-ijX"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -104,7 +95,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="155.07246376811597" y="133.92857142857142"/>
+            <point key="canvasLocation" x="154" y="127"/>
         </scene>
         <!--SecondVC-->
         <scene sceneID="NNY-5C-JMc">
@@ -127,6 +118,15 @@
                                     <segue destination="PZa-af-MMX" kind="unwind" unwindAction="unwindToFirstVC:" id="nXk-jC-ckL"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WnY-bl-ZFl">
+                                <rect key="frame" x="176" y="432" width="62" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.82588434219360352" green="0.95076388120651245" blue="0.95303279161453247" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="count"/>
+                                <connections>
+                                    <action selector="PlusOne:" destination="4PP-ha-Egm" eventType="touchUpInside" id="t8d-X3-vDx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="be7-jn-DLo"/>
@@ -142,6 +142,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="aVz-T4-R9O"/>
+        <segue reference="IdU-SJ-YPh"/>
     </inferredMetricsTieBreakers>
 </document>

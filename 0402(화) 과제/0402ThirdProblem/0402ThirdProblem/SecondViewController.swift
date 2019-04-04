@@ -12,7 +12,7 @@ class SecondViewController: UIViewController {
     
     @IBOutlet weak var segmentView: UISegmentedControl!
     var h = "-1"
-    
+    // var h :String?  이렇게 옵셔널 처리해놓으면 밑에서 옵셔널 풀지 않아도 됨!! 중요!!!!!
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -11,7 +11,7 @@ import UIKit
 class SecondVC: UIViewController {
 
     @IBOutlet weak var ImageView: UIImageView!
-    
+    var h = 0
     var imageAnimal: UIImage?
     
     override func viewDidLoad() {
@@ -22,7 +22,10 @@ class SecondVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func PlusOne(_ sender: Any) {
+        h += 1
+    }
+    
     /*
     // MARK: - Navigation
 

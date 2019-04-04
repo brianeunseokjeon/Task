@@ -16,7 +16,7 @@ class FirstVC: UIViewController {
     var dogCount = 0
     var catCount = 0
     var birdCount = 0
-    
+    var count = 0
     
     
     override func viewDidLoad() {
@@ -24,15 +24,7 @@ class FirstVC: UIViewController {
         
     }
     
-    @IBAction func allPlusOne(_ sender: Any) {
-       dogCount += 1
-        catCount += 1
-        birdCount += 1
-        
-        DogLabel.text = "\(dogCount)"
-        CatLabel.text = "\(catCount)"
-        BirdLabel.text = "\(birdCount)"
-    }
+   
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -76,6 +68,12 @@ class FirstVC: UIViewController {
     
     
     @IBAction func unwindToFirstVC(_ unwindSegue: UIStoryboardSegue) {
-        
+      count = ((unwindSegue.source as? SecondVC)?.h) ?? 0
+        dogCount += count
+        catCount += count
+        birdCount += count
+        DogLabel.text = "\(dogCount)"
+        BirdLabel.text = "\(birdCount)"
+        CatLabel.text = "\(catCount)"
     }
 }
