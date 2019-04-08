@@ -35,7 +35,7 @@ class BViewController: UIViewController {
     }
     
     @objc func dismissA(){
-        guard let vc = presentingViewController as? ViewController else {return}
+        guard let vc = presentingViewController as? AViewController else {return}
         count += 1
         print(count)
         vc.count = count

@@ -40,7 +40,7 @@ class ViewController: UIViewController {
         )
         let okAction = UIAlertAction(title: "OK", style: .default) { _ in
             if let k = alertController.textFields?[0].text {
-                if k.isEmpty {
+                if k.isEmpty {                                          // k가 비어있다면?
                     self.count += 1
                 } else {
                     self.count += Int(k) ?? 0

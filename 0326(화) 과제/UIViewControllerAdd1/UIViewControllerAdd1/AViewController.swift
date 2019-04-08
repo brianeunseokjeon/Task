@@ -12,7 +12,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class AViewController: UIViewController {
 
     
     var count = 0
