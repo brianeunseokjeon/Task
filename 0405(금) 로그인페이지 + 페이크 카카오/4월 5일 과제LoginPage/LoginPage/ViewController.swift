@@ -17,7 +17,7 @@ class ViewController: UIViewController, UITextFieldDelegate{
     let textFieldPassword = UITextField()
     let containView = UIView()
     var shared = Save.shared        // 밑에처럼 바로 가져오면 첫번째 프로퍼티만 저장함. 그래서 쉐어드에 저장된 프로퍼티사용하려면 이렇게 사용하면 될듯!~!
-    //    let email = Save.shared.tfEmail.values   >>> 이렇게하면 안됨. 왜안될까요?
+    //    let email = Save.shared.tfEmail.values   >>> 이렇게하면 안됨. 왜안될까요? 저장프로퍼티는 처음에만 저장됨.
 //    let password = Save.shared.tfEmail.keys       >>> email 대신에 Save.shared.tfEmail.values 넣으면됨
     var tfEmail = ""
   
@@ -120,6 +120,7 @@ class ViewController: UIViewController, UITextFieldDelegate{
     
     
     @objc func move(){
+        
       
             if Save.shared.tfEmail.values.contains(textFieldEmail.text ?? "") == true && Save.shared.tfEmail.keys.contains(textFieldPassword.text ?? "") == true {
                 secondVC.saveText = textFieldEmail.text
