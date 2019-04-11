@@ -79,7 +79,7 @@ class ViewController: UIViewController, UITextFieldDelegate{
         //text Field 이메일
         textFieldEmail.frame = CGRect(x: 115, y: 100, width: containView.frame.width - 200, height: 80)
         textFieldEmail.placeholder = "이메일을 입력하세요."
-        textFieldEmail.addTarget(self, action: #selector(no), for: .editingChanged)
+//        textFieldEmail.addTarget(self, action: #selector(no), for: .editingChanged)
         containView.addSubview(textFieldEmail)
         textFieldEmail.autocapitalizationType = .none                 // 첫글자 대문자 나오는것 제거하는 방법.
         
@@ -108,15 +108,15 @@ class ViewController: UIViewController, UITextFieldDelegate{
         
   
     }
-    @objc func no(){
-       let alert = UIAlertController(title: "아이디 4글자 이상, 비번 4글자이상 가능", message: "", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "ok", style: .default)
-        alert.addAction(okAction)
-        guard (textFieldEmail.text ?? "").count >= 4 && (textFieldPassword.text ?? "").count <= 16 else {
-            present(alert, animated: true)
-            return
-        }
-    }
+//    @objc func no(){
+//       let alert = UIAlertController(title: "아이디 4글자 이상, 비번 4글자이상 가능", message: "", preferredStyle: .alert)
+//        let okAction = UIAlertAction(title: "ok", style: .default)
+//        alert.addAction(okAction)
+//        guard (textFieldEmail.text ?? "").count >= 4 && (textFieldPassword.text ?? "").count <= 16 else {
+//            present(alert, animated: true)
+//            return
+//        }
+//    }
     
     
     @objc func move(){
