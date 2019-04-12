@@ -47,28 +47,40 @@ class ThirdViewController: UIViewController {
         
         
         let alertController = UIAlertController(
-            title: "아이디와 비밀번호", message: "아이디 : \(nameTextField.text ?? "")  비밀번호: \(passwordTextField.text ?? "")" , preferredStyle: .alert)
+            title: "아이디와 비밀번호",
+            message: "아이디 : \(nameTextField.text ?? "")  비밀번호: \(passwordTextField.text ?? "")",
+            preferredStyle: .alert)
         
-        let alertCon2 = UIAlertController(title: "아이디 4글자 이상, 비밀번호 4글자이상 가능", message:
-            "", preferredStyle: .alert)
+        let alertCon2 = UIAlertController(title: "아이디 4글자 이상, 비밀번호 4글자이상 가능",
+                                          message:"",
+                                          preferredStyle: .alert)
         
-        
-        let okAction = UIAlertAction(title: "확인", style: .default) {
-            _ in if self.nameTextField.text != nil && self.passwordTextField.text != nil {
-                if self.nameTextField.text!.count >= 4 && self.passwordTextField.text!.count >= 4 && self.nameTextField.text!.count <= 16 && self.passwordTextField.text!.count <= 16  {
+        let okAction = UIAlertAction(title: "확인", style: .default) { [weak self] _ in
+            guard let self = self else { return }
+            
+            let text = self.nameTextField.text!
+            if !text.isEmpty {
+                if text.count >= 4 && text.count >= 4 && text.count <= 16  {
                 Save.shared.tfEmail[self.passwordTextField.text ?? ""] = self.nameTextField.text ?? ""
                 } else {
                     self.present(alertCon2, animated: true)
                 }
             }
-            self.nameTextField.text = ""
+            
+           self.nameTextField.text = ""
             self.passwordTextField.text = ""
+            
+            
+            self.navigationController?.popViewController(animated: true)
         }
+        
         let cancelAction = UIAlertAction(title: "취소", style: .cancel)
         alertController.addAction(okAction)
         alertController.addAction(cancelAction)
         
-        present(alertController, animated: true)            //이거 안써주면 어럿컨트롤러 실행안돰.
+        present(alertController, animated: true) //이거 안써주면 어럿컨트롤러 실행안돰.
+        
+        
         
         alertCon2.addAction(cancelAction)
     }

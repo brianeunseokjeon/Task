@@ -10,6 +10,8 @@ import Foundation
 
 class Friends {
     static let friend = Friends()
-    private init(){}
+    
+    private init() { }
+    
     var save :[String] = []
 }

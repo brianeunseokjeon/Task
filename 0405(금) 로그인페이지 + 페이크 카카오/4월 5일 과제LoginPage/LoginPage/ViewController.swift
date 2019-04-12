@@ -27,19 +27,39 @@ class ViewController: UIViewController, UITextFieldDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         makeView()
-        textFieldEmail.delegate = self
-        textFieldPassword.delegate = self
-        
-        navigationItem.title = "Login Page"
-        
-        if #available(iOS 11.0, *) { // 버전 얘기할 때, ios 11 이상.
-            navigationController?.navigationBar.prefersLargeTitles = true         // 타이틀을 크게만드는 코드.
-        }
-        let barButton = UIBarButtonItem(
-            title: "회원가입",
-            style: .done, target: self, action: #selector(pushViewController(_:)))
-        navigationItem.rightBarButtonItem = barButton
+        setupNotifiaction()
+//        textFieldEmail.delegate = self
+//        textFieldPassword.delegate = self
+//
+//        navigationItem.title = "Login Page"
+//
+//        if #available(iOS 11.0, *) { // 버전 얘기할 때, ios 11 이상.
+//            navigationController?.navigationBar.prefersLargeTitles = true         // 타이틀을 크게만드는 코드.
+//        }
+//        let barButton = UIBarButtonItem(
+//            title: "회원가입",
+//            style: .done, target: self, action: #selector(pushViewController(_:)))
+//        navigationItem.rightBarButtonItem = barButton
     }
+    
+    
+    private func setupNotifiaction() {
+
+        
+//        NotificationCenter.default.post(name: <#T##NSNotification.Name#>, object: <#T##Any?#>, userInfo: <#T##[AnyHashable : Any]?#>)
+        
+//        UserDefaults
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillshow(_:)),
+                                               name: UIControl.keyboardWillShowNotification,
+                                               object: nil)
+    }
+    
+    @objc private func keyboardWillshow(_ notification: Notification) {
+        print("keyboard will show")
+        
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         print(Save.shared.tfEmail.values, Save.shared.tfEmail.keys)

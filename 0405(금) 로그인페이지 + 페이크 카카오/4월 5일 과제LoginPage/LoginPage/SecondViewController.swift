@@ -9,6 +9,7 @@
 import UIKit
 
 class SecondViewController: UIViewController {
+    
     var saveText : String? 
     let label = UILabel()
 
@@ -30,6 +31,7 @@ class SecondViewController: UIViewController {
         button.backgroundColor = .blue
         view.addSubview(button)
     }
+    
     @objc func dismiss1(){
         presentingViewController?.dismiss(animated: true)
         dismiss(animated: true)
