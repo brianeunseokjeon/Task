@@ -23,14 +23,18 @@ class Car: Vehicle {
     var modelYear: Int
     var numberOfSeats: Int
     init?(modelYear: Int, numberOfSeats: Int) {
-        guard modelYear > 0 || numberOfSeats > 0 else { return nil }
+        guard modelYear > 0 && numberOfSeats > 0 else { return nil }
         self.modelYear = modelYear
         self.numberOfSeats = numberOfSeats
         super.init(name: "sad", maxSpeed: 100)
     }
 }
 
-//if let benz = Car(modelYear: <#T##Int#>, numberOfSeats: <#T##Int#>)
+if let benz = Car(modelYear: 10, numberOfSeats: 20) {
+    benz
+} else {
+    print("dldkf")
+}
 
 class Bus: Vehicle {
     let isDoubleDecker: Bool
