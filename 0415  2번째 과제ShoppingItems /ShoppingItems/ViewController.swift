@@ -17,8 +17,7 @@ final class ViewController: UIViewController {
         tableView.rowHeight = 80
     }
     
-    var dataSet = [("iPhone8",1),("iPhoneSE_Gold",2),("iPhoneSE_RoseGold",3),("iPhoneX_SpaceGray",4),("iPhoneX_White",3),("iPhone8-1",2),("iPhoneSE_Gold-1",3),("iPhoneSE_RoseGold-1",2),("iPhoneX_SpaceGray-1",1),("iPhoneX_White-1",4),
-    ("iPhone8-2",4),("iPhoneSE_Gold-2",2),("iPhoneSE_RoseGold-2",3),("iPhoneX_SpaceGray-2",4),("iPhoneX_White-2",4)]
+    var dataSet = [("iPhone8",1),("iPhoneSE_Gold",2),("iPhoneSE_RoseGold",3),("iPhoneX_SpaceGray",4),("iPhoneX_White",3),("iPhone8-1",2),("iPhoneSE_Gold-1",3),("iPhoneSE_RoseGold-1",2),("iPhoneX_SpaceGray-1",1),("iPhoneX_White-1",4),("iPhone8-2",4),("iPhoneSE_Gold-2",2),("iPhoneSE_RoseGold-2",3),("iPhoneX_SpaceGray-2",4),("iPhoneX_White-2",4)]
     lazy var list: [information] = {
         var datalist: [information] = []
         

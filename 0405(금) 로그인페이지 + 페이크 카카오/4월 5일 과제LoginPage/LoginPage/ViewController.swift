@@ -27,39 +27,22 @@ class ViewController: UIViewController, UITextFieldDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         makeView()
-        setupNotifiaction()
-//        textFieldEmail.delegate = self
-//        textFieldPassword.delegate = self
-//
-//        navigationItem.title = "Login Page"
-//
-//        if #available(iOS 11.0, *) { // 버전 얘기할 때, ios 11 이상.
-//            navigationController?.navigationBar.prefersLargeTitles = true         // 타이틀을 크게만드는 코드.
-//        }
-//        let barButton = UIBarButtonItem(
-//            title: "회원가입",
-//            style: .done, target: self, action: #selector(pushViewController(_:)))
-//        navigationItem.rightBarButtonItem = barButton
-    }
-    
-    
-    private func setupNotifiaction() {
+//        setupNotifiaction()
+        textFieldEmail.delegate = self
+        textFieldPassword.delegate = self
 
-        
-//        NotificationCenter.default.post(name: <#T##NSNotification.Name#>, object: <#T##Any?#>, userInfo: <#T##[AnyHashable : Any]?#>)
-        
-//        UserDefaults
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(keyboardWillshow(_:)),
-                                               name: UIControl.keyboardWillShowNotification,
-                                               object: nil)
+        navigationItem.title = "Login Page"
+
+        if #available(iOS 11.0, *) { // 버전 얘기할 때, ios 11 이상.
+            navigationController?.navigationBar.prefersLargeTitles = true         // 타이틀을 크게만드는 코드.
+        }
+        let barButton = UIBarButtonItem(
+            title: "회원가입",
+            style: .done, target: self, action: #selector(pushViewController(_:)))
+        navigationItem.rightBarButtonItem = barButton
     }
     
-    @objc private func keyboardWillshow(_ notification: Notification) {
-        print("keyboard will show")
-        
-    }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         print(Save.shared.tfEmail.values, Save.shared.tfEmail.keys)
@@ -137,14 +120,14 @@ class ViewController: UIViewController, UITextFieldDelegate{
 //            return
 //        }
 //    }
-    
+//
     
     @objc func move(){
         
       
             if Save.shared.tfEmail.values.contains(textFieldEmail.text ?? "") == true && Save.shared.tfEmail.keys.contains(textFieldPassword.text ?? "") == true {
                 secondVC.saveText = textFieldEmail.text
-                present(secondVC,animated: true)
+                present(secondVC,animated: false)
             } else if Save.shared.tfEmail.values.contains(textFieldEmail.text ?? "") == true && Save.shared.tfEmail.keys.contains(textFieldPassword.text ?? "") == false {
                 UIView.animate(withDuration: 2){
                     self.textFieldPassword.backgroundColor = UIColor.red
@@ -182,6 +165,7 @@ class ViewController: UIViewController, UITextFieldDelegate{
         return true
     }
     func textFieldDidBeginEditing(_ textField: UITextField) {
+//        textFieldEmail.becomeFirstResponder()
         if containView.frame.origin.y != CGFloat(220) {
             UIView.animate(withDuration: 0.2) {
                 self.containView.frame.origin.y -= 180

@@ -24,6 +24,7 @@ final class ItemCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
     }
     
+    //스토리보드로 만들었기ㄸ때문에 여기에 작성하는듯.
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         layout()
@@ -36,8 +37,8 @@ final class ItemCell: UITableViewCell {
         contentView.addSubview(labelNumber)
 
         
+//        button.setImage(UIImage(named: "dog"), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setImage(UIImage(named: "dog"), for: .normal)
         imageView1.translatesAutoresizingMaskIntoConstraints = false
         labelText.translatesAutoresizingMaskIntoConstraints = false
         labelNumber.translatesAutoresizingMaskIntoConstraints = false
