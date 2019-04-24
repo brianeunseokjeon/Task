@@ -41,15 +41,17 @@ final class ViewController: UIViewController {
     @IBAction func NumberButton(_ sender: UIButton) {
         let count = plusCount + minusCount + multipleCount + divisionCount
     
-        if count == 1{
+        if count == 1 {
+            guard save < 100000000 else { return }
             save *= 10
             save += Double(sender.tag)
             label.text = changeNumber(num: save)
-        } else if count != 1{
+        } else if count != 1 {
             if  equalCount >= 1 {
                 num = 0
                 equalCount = 0
             }
+            guard num < 100000000 else { return }
             num *= 10
             num += Double(sender.tag)
             label.text = changeNumber(num: num)
