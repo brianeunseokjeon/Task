@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1F2ADD072272F25B00B28D83 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2ADD062272F25B00B28D83 /* CustomCell.swift */; };
+		1F2ADCFF2272EAA600B28D83 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2ADCFE2272EAA600B28D83 /* Data.swift */; };
+		1F2ADD0C227690B700B28D83 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2ADD0A227690B700B28D83 /* CustomCell.swift */; };
+		1F2ADD0D227690B700B28D83 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F2ADD0B227690B700B28D83 /* CustomCell.xib */; };
+		1F2ADD2D2277D7CF00B28D83 /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2ADD2C2277D7CF00B28D83 /* Singleton.swift */; };
 		F567CDCC226FFC8000B5A672 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F567CDCB226FFC8000B5A672 /* AppDelegate.swift */; };
 		F567CDCE226FFC8000B5A672 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F567CDCD226FFC8000B5A672 /* CategoryViewController.swift */; };
 		F567CDD1226FFC8000B5A672 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F567CDCF226FFC8000B5A672 /* Main.storyboard */; };
@@ -19,7 +22,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1F2ADD062272F25B00B28D83 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		1F2ADCFE2272EAA600B28D83 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		1F2ADD0A227690B700B28D83 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		1F2ADD0B227690B700B28D83 /* CustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
+		1F2ADD2C2277D7CF00B28D83 /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
 		F567CDC8226FFC8000B5A672 /* DominoPizzaExam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DominoPizzaExam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F567CDCB226FFC8000B5A672 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F567CDCD226FFC8000B5A672 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
@@ -63,10 +69,13 @@
 			isa = PBXGroup;
 			children = (
 				F567CDCB226FFC8000B5A672 /* AppDelegate.swift */,
-				1F2ADD062272F25B00B28D83 /* CustomCell.swift */,
 				F567CDCD226FFC8000B5A672 /* CategoryViewController.swift */,
 				F567CDDD226FFCE800B5A672 /* ProductViewController.swift */,
 				F567CDDF226FFCF800B5A672 /* DetailViewController.swift */,
+				1F2ADCFE2272EAA600B28D83 /* Data.swift */,
+				1F2ADD2C2277D7CF00B28D83 /* Singleton.swift */,
+				1F2ADD0A227690B700B28D83 /* CustomCell.swift */,
+				1F2ADD0B227690B700B28D83 /* CustomCell.xib */,
 				F567CDE1226FFD0400B5A672 /* WishListViewController.swift */,
 				F567CDCF226FFC8000B5A672 /* Main.storyboard */,
 				F567CDD2226FFC8100B5A672 /* Assets.xcassets */,
@@ -136,6 +145,7 @@
 			files = (
 				F567CDD6226FFC8100B5A672 /* LaunchScreen.storyboard in Resources */,
 				F567CDD3226FFC8100B5A672 /* Assets.xcassets in Resources */,
+				1F2ADD0D227690B700B28D83 /* CustomCell.xib in Resources */,
 				F567CDD1226FFC8000B5A672 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,11 +157,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F2ADCFF2272EAA600B28D83 /* Data.swift in Sources */,
 				F567CDDE226FFCE800B5A672 /* ProductViewController.swift in Sources */,
 				F567CDE2226FFD0400B5A672 /* WishListViewController.swift in Sources */,
 				F567CDCE226FFC8000B5A672 /* CategoryViewController.swift in Sources */,
 				F567CDCC226FFC8000B5A672 /* AppDelegate.swift in Sources */,
-				1F2ADD072272F25B00B28D83 /* CustomCell.swift in Sources */,
+				1F2ADD2D2277D7CF00B28D83 /* Singleton.swift in Sources */,
+				1F2ADD0C227690B700B28D83 /* CustomCell.swift in Sources */,
 				F567CDE0226FFCF800B5A672 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

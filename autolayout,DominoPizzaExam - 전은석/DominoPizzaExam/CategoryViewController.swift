@@ -59,7 +59,7 @@ extension CategoryViewController : UITableViewDelegate {
         let productVC = ProductViewController()
         navigationController?.pushViewController(productVC, animated: true)
         if indexPath.row == 0 {
-        productVC.save += ["글램핑 바비큐","알로하 하와이안"]
+        productVC.save = ["글램핑 바비큐","알로하 하와이안"]
             productVC.money = 10000
         } else if indexPath.row == 1 {
             productVC.save += ["블랙타이거 슈림프", "와규 앤 비스테카"]
