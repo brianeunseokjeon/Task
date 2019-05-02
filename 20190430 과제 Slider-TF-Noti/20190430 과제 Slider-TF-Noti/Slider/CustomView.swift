@@ -10,7 +10,7 @@ import UIKit
 
 class CustomView: UIView {
     
-    let label = UILabel()
+    var label = UILabel()
     let slide = UISlider()
     
     override init(frame: CGRect) {
@@ -30,6 +30,7 @@ class CustomView: UIView {
         slide.leadingAnchor.constraint(equalTo: label.trailingAnchor, constant: 30).isActive = true
         slide.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10).isActive = true
         slide.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -20).isActive = true
+       
     }
     
     

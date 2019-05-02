@@ -38,7 +38,10 @@ class ViewController: UIViewController {
         let sVC = SliderVC()
         sVC.tabBarItem.title = "1"
         let sRVC = SliderResultVC()
+        sRVC.viewDidLoad()
         sRVC.tabBarItem.title = "2"
+        
+        
         
         tap.viewControllers = [sVC, sRVC]
         

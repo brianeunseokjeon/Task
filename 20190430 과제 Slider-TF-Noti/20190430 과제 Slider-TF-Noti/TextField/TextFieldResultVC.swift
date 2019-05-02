@@ -9,22 +9,17 @@
 import UIKit
 
 class TextFieldResultVC: UIViewController {
-
+let noti = NotificationCenter.default
+    let label = UILabel(frame: CGRect(x: 30, y: 100, width: 300, height: 80))
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        noti.addObserver(self, selector: #selector(text), name: .text, object: nil)
+        label.backgroundColor = .gray
+        view.addSubview(label)
+    }
+    @objc func text(_ sender: Notification) {
+        let text = sender.object as! String
+        label.text = text
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
