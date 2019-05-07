@@ -20,8 +20,8 @@ class TextFieldVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        vc.viewDidLoad()
-       makeView()
+        makeView()
+        vc.observer11111()
     }
     func makeView() {
         textField.backgroundColor = .gray
@@ -42,5 +42,7 @@ class TextFieldVC: UIViewController {
     @objc func next1() {
        
         present(vc, animated: true)
+        
+        vc.view.backgroundColor = .white
     }
 }
