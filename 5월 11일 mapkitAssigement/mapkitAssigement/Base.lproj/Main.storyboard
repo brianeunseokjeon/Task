@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="mapkitAssigement" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ryJ-cn-TmV">
+                                <rect key="frame" x="0.0" y="44" width="334" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="nIh-UY-Qre"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="seekTextfield:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="Eeg-9c-ErJ"/>
+                                </connections>
+                            </textField>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="c2Q-J8-HgV">
+                                <rect key="frame" x="0.0" y="94" width="414" height="768"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="pK6-Cn-Oz2"/>
+                                </connections>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ywJ-jF-vFl">
+                                <rect key="frame" x="334" y="44" width="80" height="50"/>
+                                <state key="normal" title="리무브"/>
+                                <connections>
+                                    <action selector="remove:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wmi-KD-NP5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ywJ-jF-vFl" firstAttribute="leading" secondItem="ryJ-cn-TmV" secondAttribute="trailing" id="28q-aM-kQK"/>
+                            <constraint firstItem="c2Q-J8-HgV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5ug-sJ-58P"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="c2Q-J8-HgV" secondAttribute="bottom" id="6yr-kp-xVx"/>
+                            <constraint firstItem="ryJ-cn-TmV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Bts-nZ-3U7"/>
+                            <constraint firstItem="c2Q-J8-HgV" firstAttribute="top" secondItem="ywJ-jF-vFl" secondAttribute="bottom" id="Ehx-Aj-cEn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="c2Q-J8-HgV" secondAttribute="trailing" id="Mxa-JS-dVE"/>
+                            <constraint firstItem="ywJ-jF-vFl" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="RTZ-E3-tOD"/>
+                            <constraint firstItem="ywJ-jF-vFl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="YXo-6c-SdX"/>
+                            <constraint firstItem="c2Q-J8-HgV" firstAttribute="top" secondItem="ryJ-cn-TmV" secondAttribute="bottom" id="c44-ho-x39"/>
+                            <constraint firstItem="ryJ-cn-TmV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="pNJ-yM-pvN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ryJ-cn-TmV" secondAttribute="trailing" constant="80" id="qpH-Fi-pZk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="c2Q-J8-HgV" id="1da-0p-Skm"/>
+                        <outlet property="textField" destination="ryJ-cn-TmV" id="Y7b-Z5-ZaB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="115.94202898550725" y="135.9375"/>
+        </scene>
+    </scenes>
+</document>
