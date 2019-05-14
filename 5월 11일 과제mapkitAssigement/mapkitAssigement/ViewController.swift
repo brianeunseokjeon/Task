@@ -11,8 +11,8 @@ import UIKit
 class ViewController: UIViewController {
     let geocoder = CLGeocoder()
     var count = 0
-    var lati :CLLocationDegrees = 0
-    var longi :CLLocationDegrees = 0
+//    var lati :CLLocationDegrees = 0
+//    var longi :CLLocationDegrees = 0
     var arr :[CLLocationCoordinate2D] = []
     
     @IBOutlet weak var textField: UITextField!
@@ -42,9 +42,9 @@ extension ViewController: UITextFieldDelegate {
         
         geocoder.geocodeAddressString(textField.text ?? "서울특별시 강남구 강남역") { (placeMark, error) in
             guard let placeMark = placeMark?.first else {return}
-            self.lati = (placeMark.location?.coordinate.latitude)!
-            self.longi = (placeMark.location?.coordinate.longitude)!
-            print("333333순서체크중-----\(self.lati),\(self.longi) seekTextFeild")
+//            self.lati = (placeMark.location?.coordinate.latitude)!
+//            self.longi = (placeMark.location?.coordinate.longitude)!
+//            print("333333순서체크중-----\(self.lati),\(self.longi) seekTextFeild")
             self.arr.append(placeMark.location!.coordinate)
             
             let span = MKCoordinateSpan(latitudeDelta: 0.5 , longitudeDelta: 0.5)
@@ -65,7 +65,7 @@ extension ViewController: UITextFieldDelegate {
         
         
         
-        print("22222----맵뷰에 뭐있는지 보자 ,\(lati),\(longi)")
+        print("22222----맵뷰에 뭐있는지 보자")
         return true
     }
    
@@ -89,7 +89,7 @@ extension ViewController: UITextFieldDelegate {
         mapView.addOverlay(polyline)
        
         
-        print("11111순서체크중 whereAmI -\(lati),\(longi)---------------------------")
+        print("11111순서체크중 whereAmI --------------------------")
 
     }
 }
