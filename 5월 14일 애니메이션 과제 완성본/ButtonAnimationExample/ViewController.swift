@@ -66,7 +66,7 @@ final class ViewController: UIViewController {
     @objc func firstMenuDidTap(_ sender: UIButton) {
         sender.isSelected.toggle()
         UIView.animateKeyframes(
-            withDuration: Time.long,
+            withDuration: 2,
             delay: 0,
             options: [.beginFromCurrentState],
             animations: {
