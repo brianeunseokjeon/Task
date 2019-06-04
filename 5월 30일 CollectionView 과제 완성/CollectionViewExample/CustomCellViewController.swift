@@ -15,7 +15,6 @@ final class CustomCellViewController: UIViewController {
   let numberArr = Array(1...120)
     let parkImages = ParkManager.imageNames(of: .nationalPark)
     var showImage = false
-   var bool = false
   
   override func viewDidLoad() {
     super.viewDidLoad()
