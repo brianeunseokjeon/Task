@@ -16,16 +16,16 @@ import UIKit
  [abce, abcd, cdx]   2    [abcd, abce, cdx]
  */
 
-func solution1(_ strings:[String], _ n:Int) -> [String] {
+func solution6(_ strings:[String], _ n:Int) -> [String] {
     
     let index = String.Index(encodedOffset: n)
     return strings.sorted {($0[index],$0)<($1[index],$1)}
 }
 
-print(solution1( ["abce", "abcd", "cdxx","mdke","akse"],3 ))
+print(solution6( ["abce", "abcd", "cdxx","mdke","akse"],3 ))
 
 
-func solution3(_ strings:[String], _ n:Int) -> [String] {
+func solution61(_ strings:[String], _ n:Int) -> [String] {
     return strings.sorted(by: {
         let index = $0.index($0.startIndex, offsetBy: n)
 //        let index1 = $1.index($1.startIndex, offsetBy: n)
@@ -38,7 +38,7 @@ func solution3(_ strings:[String], _ n:Int) -> [String] {
     })
 }
 
-print(solution3(["abce", "abcd", "cdxx","mdke","akse","qeie","dueoq","Qwewe","sxue","owhrg"], 1))
+print(solution61(["abce", "abcd", "cdxx","mdke","akse","qeie","dueoq","Qwewe","sxue","owhrg"], 1))
 
 
 
@@ -98,7 +98,7 @@ if let lastNegative = numbers2.last(where: { $0 < 0 }) {
 //[3,2,6]          10         [-1]
 
 
-func solution10(_ arr:[Int], _ divisor:Int) -> [Int] {
+func solution7(_ arr:[Int], _ divisor:Int) -> [Int] {
     var save: [Int] = []
     for x in arr {
         if x % divisor == 0 {
@@ -111,7 +111,30 @@ func solution10(_ arr:[Int], _ divisor:Int) -> [Int] {
     return save.sorted(by: <)
 }
 //추가 답
-func solution11(_ arr:[Int], _ divisor:Int) -> [Int] {
+func solution71(_ arr:[Int], _ divisor:Int) -> [Int] {
     let array = arr.sorted().filter{ $0 % divisor == 0 }
     return  array == [] ? [-1] : array
 }
+
+//6월10일
+// 자연수 n을 뒤집어 각 자리 숫자를 원소로 가지는 배열 형태로 리턴해주세요. 예를들어 n이 12345이면 [5,4,3,2,1]을 리턴합니다.
+func solution10(_ n:Int64) -> [Int] {
+    var num = Int(n)
+    var arr = [Int]()
+    while num > 0 {
+        arr.append(num % 10)
+        num /= 10
+    }
+    return arr
+}
+
+solution10(12345)
+
+
+// compactMap 사용하면 배열을 리턴함.
+func solution101(_ n:Int64) -> [Int] {
+    return String(n).reversed().compactMap { Int(String($0)) }
+}
+
+solution101(123468)
+
