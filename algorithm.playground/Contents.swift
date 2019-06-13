@@ -116,7 +116,7 @@ func solution71(_ arr:[Int], _ divisor:Int) -> [Int] {
     return  array == [] ? [-1] : array
 }
 
-//6월10일
+//3회차 6월10일
 // 자연수 n을 뒤집어 각 자리 숫자를 원소로 가지는 배열 형태로 리턴해주세요. 예를들어 n이 12345이면 [5,4,3,2,1]을 리턴합니다.
 func solution10(_ n:Int64) -> [Int] {
     var num = Int(n)
@@ -138,3 +138,67 @@ func solution101(_ n:Int64) -> [Int] {
 
 solution101(123468)
 
+
+//4회차 6월 13일 (목)
+//문자열 s에 나타나는 문자를 큰것부터 작은 순으로 정렬해 새로운 문자열을 리턴하는 함수, solution을 완성해주세요.
+//s는 영문 대소문자로만 구성되어 있으며, 대문자는 소문자보다 작은 것으로 간주합니다.
+//
+//제한 사항
+//str은 길이 1 이상인 문자열입니다.
+//입력          결과
+//Zbcdefg    gfedcbZ
+
+
+
+func sol13(_ s:String) -> String {
+    var str = s
+    return String(str.sorted(by: >))
+}
+sol13("ebxrdzneAXEZ")
+
+
+//4회 - 2
+//시저 암호
+//문제 설명
+//어떤 문장의 각 알파벳을 일정한 거리만큼 밀어서 다른 알파벳으로 바꾸는 암호화 방식을 시저 암호라고 합니다. 예를 들어 AB는 1만큼 밀면 BC가 되고, 3만큼 밀면 DE가 됩니다. z는 1만큼 밀면 a가 됩니다. 문자열 s와 거리 n을 입력받아 s를 n만큼 민 암호문을 만드는 함수, solution을 완성해 보세요.
+//
+//제한 조건
+//공백은 아무리 밀어도 공백입니다.
+//s는 알파벳 소문자, 대문자, 공백으로만 이루어져 있습니다.
+//s의 길이는 8000이하입니다.
+//n은 1 이상, 25이하인 자연수입니다.
+//입출력 예
+//s        n    result
+//AB       1     BC
+//z        1      a
+//a B z    4    e F d
+
+
+func solution13(_ s:String, _ n:Int) -> String {
+   let lowerCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+    let upperCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+    var strArr: [String] = []
+    var str = ""
+    for x in s {
+        if lowerCase.contains("\(x)") {
+            
+           let num = lowerCase.firstIndex(of: "\(x)")! + n
+            strArr.append(lowerCase[num%26])
+        } else if upperCase.contains("\(x)") {
+           let num = upperCase.firstIndex(of: "\(x)")! + n
+            strArr.append(upperCase[num%26])
+        } else {
+            strArr.append(" ")
+        }
+    }
+    for x in strArr {
+       str += x
+    }
+    return str
+}
+
+solution13("a", 4)
+let upperCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+for (index, value) in upperCase.enumerated() {
+    
+}
