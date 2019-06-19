@@ -16,6 +16,13 @@ import UIKit
  [abce, abcd, cdx]   2    [abcd, abce, cdx]
  */
 
+
+
+
+
+
+
+
 func solution6(_ strings:[String], _ n:Int) -> [String] {
     
     let index = String.Index(encodedOffset: n)
