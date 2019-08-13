@@ -117,7 +117,7 @@ func solution709(_ skill:String, _ skill_trees:[String]) -> Int {
     
     for x in skill.enumerated() {
         if !(skillArray[x.element] != nil) {
-        skillArray[x.element] = x.offset
+            skillArray[x.element] = x.offset
         }
     }
     for x in skill_trees {
@@ -142,7 +142,7 @@ func solution709(_ skill:String, _ skill_trees:[String]) -> Int {
             }
         }
     }
-
+    
     return answer
 }
 
@@ -269,38 +269,94 @@ solution7091("SBAKL", ["SEBRLT"])
  
  land    answer
  [[1,2,3,5],[5,6,7,8],[4,3,2,1]]
-
+ 
  */
-var h = [1,2,3,5].enumerated()
+
+func a(num:Int) -> Int {
+    if num == 0 {
+        return 0
+    } else if num == 1 {
+         return 1
+    } else {
+        return a(num: num-1) + a(num: num-2)
+    }
+    
+}
+let b =  [[4,3,2,1],[8,5,3,1]]
+
+
+
+
+func rank(_ arr:[Int],rank:Int) -> (Int,Int) {
+    var ranker = 0
+    var index = 0
+    var tempArr :[Int] = []
+    
+    tempArr = arr.sorted(by: >)
+    ranker = tempArr[rank-1]
+    
+    for (ind,element) in arr.enumerated() {
+        if element == ranker {
+            index = ind
+        }
+    }
+    
+    
+    return (ranker,index)
+}
+
+rank([1,9,8,3], rank: 4).0 // ranker
+rank([1,9,8,3], rank: 4).1 // ranker 의 index
 
 
 func solution723(_ land:[[Int]]) -> Int{
     var answer = 0
     var first = 0
-    var indexSave = 0
-    var firstIndex = -1
+    var second = 0
+    var firstIndex = 0
+    var secondIndex = 0
+    
     for arr in land {
-        first = 0
-        indexSave = 0
-        for (index,element) in arr.enumerated() {
-            if first < element && index != firstIndex{
-                first = element
-                indexSave = index
+        for (x,y) in arr.enumerated() {
+            if y > first {
+                
             }
         }
-        firstIndex = indexSave
-        answer += first
+        first = rank(arr, rank: 1).0
+        firstIndex = rank(arr, rank: 1).1
+        second = rank(arr, rank: 2).0
+        secondIndex = rank(arr, rank: 2).1
+        
+        
+        
     }
-  
+
     return answer
 }
 
-solution723([[1,2,3,5],[5,6,7,8],[4,3,2,1]])
 
 
+solution723([[1,5,3,2],[5,6,7,8],[4,3,2,1]])
+let a = [[1,6,7,5],[4,6,7,8],[4,6,2,11]]
 
 
+//func solution723(_ land:[[Int]]) -> Int{
+//    var answer = 0
+//    var dp = land
+//    if land.count == 1 {
+//       answer = max(dp[0][0], dp[0][1], dp[0][2], dp[0][3])
+//    } else {
+//    for i in (0...dp.count - 2) {
+//    dp[i+1][0] = max(land[i+1][1],land[i+1][2],land[i+1][3])+dp[i][0]
+//    dp[i+1][1] = max(land[i+1][0],land[i+1][2],land[i+1][3])+dp[i][1]
+//    dp[i+1][2] = max(land[i+1][1],land[i+1][0],land[i+1][3])+dp[i][2]
+//    dp[i+1][3] = max(land[i+1][1],land[i+1][2],land[i+1][0])+dp[i][3]
+//        print(dp[i+1][0],dp[i+1][1],dp[i+1][2],dp[i+1][3])
+//    }
+//    answer = max(dp[dp.count-1][0], dp[dp.count-1][1], dp[dp.count-1][2], dp[dp.count-1][3])
+//    }
+//    return answer
+//}
 //: [Next](@next
-
 
 
