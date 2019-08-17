@@ -3,24 +3,6 @@
 import Foundation
 
 //4곱하기 4 메이즈
-//let a = [
-//[1,1,0,0],
-//[0,1,1,1],
-//[1,0,1,0],
-//[1,1,1,1]
-//]
-//func maze(arr:[[Int]])->[[Int]] {
-//    var b = arr
-//    for x in 0...(arr[0].count-1) {
-//        for y in 0...(arr.count-1) {
-//
-//        }
-//    }
-//
-//
-//
-//    return b
-//}
 
 func solution(s:String)->String {
     var stringArray: [Character] = []
@@ -41,6 +23,7 @@ func solution(s:String)->String {
 
 let h = "dagehbZ"
 h.sorted(by: >)
+
 func solution2(_ s:String) -> String {
     var lowerArr: [Character] = []
     var upperArr: [Character] = []
@@ -66,3 +49,31 @@ func solution2(_ s:String) -> String {
 
 
 solution2("abewZef")
+
+let a = [
+    [1,1,0,0],
+    [0,1,1,1],
+    [1,0,1,0],
+    [1,1,1,1]
+]
+
+
+func maze(arr:[[Int]]) -> [[Int]] {
+    var b = arr
+    var count = 0
+ 
+    for y in 0...3 {
+        if y < 3 && b[0][y] == b[0][y+1] {
+            
+        } else if y == 3 && b[0][2] == b[0][3] {
+            
+        }
+    }
+    
+   
+    
+    return b
+}
+
+//maze(arr: a)
+
