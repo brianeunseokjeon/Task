@@ -187,7 +187,7 @@
    이것을 secondVC에 정의해 구현했다면 반대로 firstVC에 정의하여 1번 문제 다시 해결하기
    
 - 0405 
-  1. [매너져님 과제]  
+  1. [매너저님 과제]  
     영상과 같이 코드로 구현하시오.
     1. UITabbarController에 두개의 ViewController를 생성
     2. 첫번째 ViewController 에 UINavigationController 연결, 친구목록을 표현할 UILabel 생성
